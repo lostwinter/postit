@@ -5,7 +5,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
   
-  def show; end #instance var set above
+  def show
+    @comment = Comment.new
+  end #instance var set above
   
   def new
     @post = Post.new
