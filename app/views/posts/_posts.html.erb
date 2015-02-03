@@ -1,3 +1,4 @@
+
 <div class='row'>
     <div class='span8 well'>
         <%= render post.categories %>
@@ -12,17 +13,7 @@
                 <%= link_to("#{post.comments.size} comments", post_path(post)) %>
             </span>
         </small>
-        <div class='control-group'>  
-    <!--# Still working on this.-->
-        <ul>
-            <% post.categories.each do |category| %>
-            <div class='badge'>
-                <li><%= category.name %></li>
-            </div>
-            <% end %>
-        </ul>
-        <!-- end category badges -->
-    </div>
+        
     </div>
     
 </div>
