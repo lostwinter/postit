@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
-    @post.creator = User.first # change once we have authentication
+    @post.creator = current_user # change once we have authentication
     
     if @post.save
       flash[:notice] = "Your post was created"
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(:title, :url, :description)
+    params.require(:post).permit(:title, :url, :description, category_ids: [])
   end
   
   def set_post

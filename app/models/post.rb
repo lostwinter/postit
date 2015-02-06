@@ -8,4 +8,5 @@ class Post < ActiveRecord::Base
     validates :description, presence: true
     validates :url, presence: true, uniqueness: true
     validates :creator, presence: true
+    validates :category_ids, presence: true 
 end
